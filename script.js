@@ -1,5 +1,5 @@
 /* ============================================================
-   Lea Ademilola — small progressive enhancements.
+   Lea Ademilola â€” small progressive enhancements.
    The page is fully usable with this file blocked or failing.
    ============================================================ */
 (function () {
@@ -81,7 +81,7 @@
       navigator.clipboard.writeText(EMAIL).then(function () {
         if (copyStatus) copyStatus.textContent = "Copied " + EMAIL + " to your clipboard.";
       }).catch(function () {
-        if (copyStatus) copyStatus.textContent = "Couldn't copy — the address is " + EMAIL + ".";
+        if (copyStatus) copyStatus.textContent = "Couldn't copy â€” the address is " + EMAIL + ".";
       });
     });
   }
@@ -143,7 +143,7 @@
 
   /* ---------- Gentle reveal on scroll ---------- */
   if (!reduceMotion && "IntersectionObserver" in window) {
-    /* Structural blocks only. Body paragraphs are deliberately left out —
+    /* Structural blocks only. Body paragraphs are deliberately left out â€”
        fading in one paragraph at a time interrupts reading. */
     var targets = document.querySelectorAll(
       ".section .kicker, .section h2, .section-lede, .card, .who-list li, .offer, " +
