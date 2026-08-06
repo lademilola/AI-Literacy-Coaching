@@ -323,6 +323,9 @@
       <h2 id="about-h">I grew up in a brand new digital world. The next one should include all of us.</h2>
 
       <figure class="about-banner">
+        <a class="connect-badge" href="https://www.linkedin.com/in/lea-ademilola/" target="_blank" rel="noopener">
+          Let's<br>Connect!
+        </a>
         <img src="lea-about.jpg" alt="Lea Ademilola seated in an auditorium, reading through her notes."
              id="leaPhoto" width="953" height="533">
         <div class="portrait-fallback" id="portraitFallback" hidden>
@@ -354,7 +357,9 @@
       <div class="about-flow">
         <div class="about-pin-track" aria-hidden="true">
           <aside class="about-pin" id="aboutPin">
-            <img src="lea-headshot.jpg" alt="" width="900" height="900">
+            <a href="https://www.linkedin.com/in/lea-ademilola/" target="_blank" rel="noopener" tabindex="-1">
+              <img src="lea-headshot.jpg" alt="" width="900" height="900">
+            </a>
             <span class="pin-badge pin-gold">Hi, I'm Lea</span>
             <span class="pin-badge pin-coral">Gen Z</span>
             <span class="pin-badge pin-sage">AI Literacy Coach</span>
@@ -835,20 +840,24 @@
           Whoever it's&nbsp;for, I'd&nbsp;like&nbsp;to&nbsp;help.
         </p>
 
-        <a class="btn btn-sage btn-big" href="mailto:coachlea.ai@gmail.com?subject=AI%20%26%20technical%20literacy%20inquiry">
-          coachlea.ai@gmail.com
-        </a>
+        <div class="contact-actions">
+          <a class="btn btn-sage btn-big" href="mailto:coachlea.ai@gmail.com?subject=AI%20%26%20technical%20literacy%20inquiry">
+            coachlea.ai@gmail.com
+          </a>
+          <button type="button" class="copy-email" id="copyEmail" hidden>Copy address</button>
+        </div>
+        <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
 
         <p class="contact-help">
-          Helpful to include, if you know it: who your group is, roughly how many people,
-          in person or virtual, and what you'd like them to walk away with. If you don't know
-          yet, write anyway. We can figure it out together.
+          Helpful to include: who your group is, roughly how many people, and whether you want it
+          in person or virtual. Not sure yet? Write anyway.
         </p>
 
-        <button type="button" class="copy-email" id="copyEmail" hidden>
-          Copy email address
-        </button>
-        <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+        <p class="contact-social">
+          You can also find me on
+          <a class="social-link" href="https://www.linkedin.com/in/lea-ademilola/"
+             target="_blank" rel="noopener"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>LinkedIn</a>
+        </p>
       </div>
 
       <div class="contact-art" aria-hidden="true">
@@ -877,7 +886,11 @@
     <div class="footer-words">
       <p class="footer-name">Lea Ademilola</p>
       <p class="footer-tag">Ethical AI literacy for every generation.</p>
-      <p class="footer-mail"><a href="mailto:coachlea.ai@gmail.com?subject=AI%20%26%20technical%20literacy%20inquiry">coachlea.ai@gmail.com</a></p>
+      <p class="footer-contact">
+        <a href="mailto:coachlea.ai@gmail.com?subject=AI%20%26%20technical%20literacy%20inquiry">coachlea.ai@gmail.com</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a class="social-link" href="https://www.linkedin.com/in/lea-ademilola/" target="_blank" rel="noopener"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>LinkedIn</a>
+      </p>
     </div>
     <p class="footer-copy">&copy; <span id="year">2026</span> Lea Ademilola</p>
   </div>

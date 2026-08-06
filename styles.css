@@ -465,7 +465,24 @@ html.js .site-nav[data-collapsed="true"] { display: none; }
 .about-facts li { text-align: center; }
 
 /* Wide photo frame */
-.about-banner { margin: 1.75rem auto 0; max-width: 56rem; }
+.about-banner { position: relative; margin: 1.75rem auto 0; max-width: 56rem; }
+
+/* "Let's Connect!" sticker, top right of the photo */
+.connect-badge {
+  position: absolute; z-index: 3; top: -.9rem; right: -.6rem;
+  width: 6.25rem; height: 6.25rem; border-radius: 50%;
+  display: grid; place-items: center; text-align: center;
+  background: var(--gold); color: var(--navy-deep);
+  border: 3px solid var(--navy-deep);
+  font-family: var(--display); font-weight: 600; font-size: 1.05rem; line-height: 1.05;
+  text-decoration: none; transform: rotate(-8deg);
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .55);
+  transition: transform .2s ease;
+}
+.connect-badge:hover { color: var(--navy-deep); transform: rotate(-3deg) scale(1.06); }
+@media (max-width: 40rem) {
+  .connect-badge { width: 4.9rem; height: 4.9rem; font-size: .85rem; top: -.6rem; right: -.35rem; }
+}
 .about-banner img {
   display: block; width: 100%; height: auto;
   aspect-ratio: 953 / 533; object-fit: cover;
@@ -510,11 +527,13 @@ html.js .site-nav[data-collapsed="true"] { display: none; }
     pointer-events: none;
   }
   .about-pin {
-    position: sticky; top: 6rem;
+    position: sticky; top: 6rem; pointer-events: auto;
     display: flex; flex-direction: column; align-items: center; gap: .3rem;
     opacity: 0; transition: opacity .35s ease;
   }
   .about-pin.is-shown { opacity: 1; }
+  .about-pin a { display: block; border-radius: 50%; transition: transform .2s ease; }
+  .about-pin a:hover { transform: scale(1.05); }
   .about-pin img {
     display: block; width: 5.5rem; height: 5.5rem;
     border-radius: 50%; object-fit: cover;
@@ -697,17 +716,40 @@ html.js .site-nav[data-collapsed="true"] { display: none; }
   max-width: 32rem; margin-bottom: 1.9rem;
   text-wrap: pretty; /* browsers that support it also avoid single-word last lines */
 }
-.contact-help { margin-top: 1.7rem; font-size: .97rem; color: #DCE1EA; max-width: 36rem; }
+.contact-help { margin-top: 1.1rem; font-size: .92rem; line-height: 1.6; color: #BCC5D4; max-width: 30rem; }
 .contact-art svg { display: block; width: 100%; max-width: 22rem; height: auto; margin-inline: auto; }
 
-.copy-email {
-  margin-top: 1.2rem; background: transparent; border: 2px solid rgba(230, 199, 155, .6);
-  color: var(--kraft); border-radius: 999px; padding: .7rem 1.15rem; min-height: 2.9rem;
-  font-family: var(--body); font-size: .94rem; font-weight: 600; cursor: pointer;
-  transition: background-color .18s ease, border-color .18s ease;
+/* actions sit on one row: the email button, then a quiet text button */
+.contact-actions {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem;
 }
-.copy-email:hover { background: rgba(230, 199, 155, .16); border-color: var(--kraft); }
-.copy-status { min-height: 1.6rem; margin: .6rem 0 0; font-size: .92rem; color: var(--sage); font-weight: 600; }
+.copy-email {
+  background: none; border: 0; padding: .5rem 0; min-height: 2.5rem;
+  color: var(--kraft); font-family: var(--body); font-size: .92rem; font-weight: 600;
+  cursor: pointer; text-decoration: underline;
+  text-decoration-thickness: 2px; text-underline-offset: 3px;
+}
+.copy-email:hover { color: var(--sage); }
+.copy-status {
+  min-height: 1.35rem; margin: .35rem 0 0; font-size: .88rem;
+  color: var(--sage); font-weight: 600;
+}
+
+/* ---------- LinkedIn link ---------- */
+.social-link {
+  display: inline-flex; align-items: center; gap: .4rem;
+  color: var(--sage); font-weight: 600; text-decoration: none;
+  border-bottom: 2px solid rgba(147, 192, 140, .45);
+  padding-bottom: 1px;
+}
+.social-link:hover { color: var(--kraft); border-bottom-color: var(--kraft); }
+.social-icon { width: 1.15em; height: 1.15em; fill: currentColor; flex: 0 0 auto; }
+
+.contact-social {
+  margin-top: 1.5rem; padding-top: 1.2rem; font-size: .95rem; color: #DCE1EA;
+  border-top: 1px solid rgba(230, 199, 155, .25); max-width: 30rem;
+}
+.footer-social { margin: .35rem 0 0; font-size: .94rem; }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-deep); color: var(--paper); padding: 2.75rem 0; border-top: 5px solid var(--sage); }
@@ -715,9 +757,13 @@ html.js .site-nav[data-collapsed="true"] { display: none; }
 .footer-words { flex: 1 1 16rem; }
 .footer-name { font-family: var(--display); font-weight: 600; font-size: 1.15rem; margin: 0; color: var(--paper-pure); }
 .footer-tag { margin: .1rem 0 .35rem; color: var(--kraft); font-size: .94rem; }
-.footer-mail { margin: 0; font-size: .94rem; }
-.footer-mail a { color: var(--sage); }
-.footer-mail a:hover { color: var(--gold); }
+.footer-contact {
+  margin: .35rem 0 0; display: flex; flex-wrap: wrap; align-items: center;
+  gap: .35rem .7rem; font-size: .94rem;
+}
+.footer-contact .sep { color: rgba(243, 241, 234, .35); }
+.footer-contact a:first-child { color: var(--kraft); }
+.footer-contact a:first-child:hover { color: var(--sage); }
 .footer-copy { margin: 0; font-size: .86rem; color: #97A2B5; flex: 0 0 auto; }
 
 /* ---------- Gentle reveal (skipped for reduced motion / no JS) ---------- */
