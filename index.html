@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lea Ademilola — AI Literacy Coach</title>
+<meta name="description" content="Lea Ademilola teaches AI literacy in plain language, for seniors, students, families, working professionals, and community organizations. Workshops, talks, and one-on-one sessions.">
+<meta name="theme-color" content="#1B2740">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lea Ademilola — AI Literacy Coach">
+<meta property="og:description" content="Ethical AI literacy for every generation. Workshops, talks, and one-on-one sessions in plain language.">
+<!-- After publishing, replace this with the full address, e.g.
+     https://yourname.github.io/lea-headshot.jpg
+     Some sites (LinkedIn especially) will not show the preview image without it. -->
+<meta property="og:image" content="lea-headshot.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="monogram" aria-hidden="true">
+        <svg viewBox="0 0 64 64" focusable="false"><circle cx="32" cy="32" r="30" class="mono-ring"/><text x="32" y="43" text-anchor="middle" class="mono-text">LA</text></svg>
+      </span>
+      <span class="brand-words">
+        <span class="brand-name">Lea Ademilola</span>
+        <span class="brand-role">AI Literacy Coach</span>
+      </span>
+    </a>
+
+    <div class="header-tools">
+      <button type="button" class="text-size-btn" id="textSizeBtn" aria-pressed="false">
+        <span aria-hidden="true">A</span><span class="text-size-plus" aria-hidden="true">A</span>
+        <span class="sr-only-label">Larger text</span>
+      </button>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+        <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="nav-toggle-label">Menu</span>
+      </button>
+    </div>
+
+    <nav class="site-nav" id="siteNav" aria-label="Sections of this page">
+      <ul>
+        <li><a href="#why">Why I do this</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#who">Who I teach</a></li>
+        <li><a href="#ethics">Ethics</a></li>
+        <li><a href="#sessions">Sessions</a></li>
+        <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">AI &amp; technical literacy coach &middot; Speaker &middot; Workshop facilitator</p>
+        <h1>Stay human.<br><span class="brush">Stay intelligent.</span></h1>
+        <p class="lede">
+          I'm Lea Ademilola. I teach people how AI actually works: seniors, kids, students, parents,
+          and teams who have mostly been left out of the conversation. I explain it in plain
+          language, using examples from your own life.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:coachlea.ai@gmail.com?subject=AI%20%26%20technical%20literacy%20inquiry">
+            Email me
+            <span class="btn-sub">coachlea.ai@gmail.com</span>
+          </a>
+          <a class="btn btn-quiet" href="#sessions">See what a session looks like</a>
+        </div>
+        <ul class="stickers">
+          <li class="sticker sticker-sage">Ages 8 to 108</li>
+          <li class="sticker sticker-coral">Questions welcome</li>
+          <li class="sticker sticker-gold">Virtual or in person</li>
+        </ul>
+      </div>
+
+      <div class="hero-art-wrap">
+        <!-- Headshot. If the file is ever missing, the LA monogram shows in its
+             place instead of a broken image (see script.js). -->
+        <figure class="hero-photo">
+          <img src="lea-headshot.jpg" alt="Lea Ademilola" id="heroPhoto" width="900" height="900">
+          <div class="hero-photo-fallback" id="heroPhotoFallback" hidden>
+            <svg viewBox="0 0 64 64" role="img" aria-label="LA monogram standing in for a photo of Lea">
+              <circle cx="32" cy="32" r="32" class="il-wash-kraft"/>
+              <circle cx="32" cy="32" r="30" class="mono-ring"/>
+              <text x="32" y="43" text-anchor="middle" class="mono-text">LA</text>
+            </svg>
+          </div>
+        </figure>
+
+        <svg class="hero-art" viewBox="0 0 540 400" role="img"
+             aria-label="Illustration of three people of different ages: a child, an adult, and an older woman with glasses and a cane, standing together looking at a tablet, with friendly speech bubbles above them.">
+          <!-- backdrop -->
+          <circle cx="272" cy="200" r="172" class="il-wash-kraft"/>
+          <circle cx="272" cy="200" r="172" class="il-ring"/>
+
+          <!-- floating confetti -->
+          <circle cx="46" cy="214" r="7" class="il-coral float-a"/>
+          <circle cx="506" cy="286" r="9" class="il-sage float-b"/>
+          <circle cx="446" cy="330" r="6" class="il-teal float-c"/>
+          <circle cx="104" cy="60" r="6" class="il-gold float-b"/>
+          <circle cx="292" cy="24" r="5" class="il-coral float-c"/>
+
+          <!-- sun -->
+          <g class="float-a">
+            <circle cx="480" cy="126" r="17" class="il-gold"/>
+            <g class="il-stroke-gold">
+              <path d="M480 96 v-9"/><path d="M510 126 h9"/>
+              <path d="M501 105 l6-6"/><path d="M501 147 l6 6"/>
+            </g>
+          </g>
+
+          <!-- plant -->
+          <g>
+            <ellipse cx="70" cy="292" rx="9" ry="24" class="il-sage" transform="rotate(-22 70 292)"/>
+            <ellipse cx="92" cy="296" rx="9" ry="22" class="il-sage-deep-fill" transform="rotate(20 92 296)"/>
+            <ellipse cx="81" cy="282" rx="8" ry="26" class="il-sage"/>
+            <path d="M60 316 h44 l-6 42 h-32 z" class="il-coral"/>
+            <path d="M58 312 h48 v10 h-48 z" class="il-kraft"/>
+          </g>
+
+          <!-- speech bubble, left -->
+          <g>
+            <path d="M72 70 h80 a20 20 0 0 1 20 20 v30 a20 20 0 0 1 -20 20 h-44 l-16 20 v-20 h-20 a20 20 0 0 1 -20 -20 v-30 a20 20 0 0 1 20 -20 z"
+                  class="il-paper"/>
+            <path d="M72 70 h80 a20 20 0 0 1 20 20 v30 a20 20 0 0 1 -20 20 h-44 l-16 20 v-20 h-20 a20 20 0 0 1 -20 -20 v-30 a20 20 0 0 1 20 -20 z"
+                  class="il-outline"/>
+            <circle cx="88" cy="105" r="7" class="il-coral"/>
+            <circle cx="112" cy="105" r="7" class="il-gold"/>
+            <circle cx="136" cy="105" r="7" class="il-teal"/>
+          </g>
+
+          <!-- speech bubble, right -->
+          <g>
+            <path d="M370 46 h84 a18 18 0 0 1 18 18 v28 a18 18 0 0 1 -18 18 h-40 l-14 18 v-18 h-30 a18 18 0 0 1 -18 -18 v-28 a18 18 0 0 1 18 -18 z"
+                  class="il-wash-sage"/>
+            <path d="M370 46 h84 a18 18 0 0 1 18 18 v28 a18 18 0 0 1 -18 18 h-40 l-14 18 v-18 h-30 a18 18 0 0 1 -18 -18 v-28 a18 18 0 0 1 18 -18 z"
+                  class="il-outline"/>
+            <path d="M382 80 l10 10 20-24" class="il-check"/>
+          </g>
+
+          <!-- ground -->
+          <rect x="46" y="356" width="448" height="7" rx="3.5" class="il-shadow"/>
+
+          <!-- child -->
+          <g>
+            <rect x="170" y="326" width="11" height="32" rx="5" class="il-navy"/>
+            <rect x="191" y="326" width="11" height="32" rx="5" class="il-navy"/>
+            <path d="M208 288 q20 4 24 16" class="il-arm-coral"/>
+            <path d="M164 288 q-14 6 -16 18" class="il-arm-coral"/>
+            <rect x="164" y="270" width="44" height="58" rx="18" class="il-coral"/>
+            <circle cx="186" cy="250" r="19" class="il-skin-a"/>
+            <circle cx="171" cy="236" r="10" class="il-hair"/>
+            <circle cx="201" cy="236" r="10" class="il-hair"/>
+            <path d="M169 245 a18 18 0 0 1 34 0" class="il-hair-stroke"/>
+            <circle cx="180" cy="251" r="2.2" class="il-navy"/>
+            <circle cx="192" cy="251" r="2.2" class="il-navy"/>
+            <path d="M179 258 q7 6 14 0" class="il-smile"/>
+          </g>
+
+          <!-- adult -->
+          <g>
+            <rect x="250" y="322" width="13" height="36" rx="6" class="il-navy"/>
+            <rect x="281" y="322" width="13" height="36" rx="6" class="il-navy"/>
+            <path d="M248 264 L242 292" class="il-arm-teal"/>
+            <path d="M296 264 L302 292" class="il-arm-teal"/>
+            <rect x="242" y="234" width="60" height="90" rx="24" class="il-teal"/>
+            <circle cx="272" cy="208" r="24" class="il-skin-b"/>
+            <circle cx="272" cy="180" r="12" class="il-hair"/>
+            <path d="M248 200 a24 24 0 0 1 48 0" class="il-hair-stroke"/>
+            <circle cx="264" cy="209" r="2.4" class="il-navy"/>
+            <circle cx="280" cy="209" r="2.4" class="il-navy"/>
+            <path d="M262 217 q10 8 20 0" class="il-smile"/>
+            <!-- shared tablet -->
+            <rect x="238" y="286" width="68" height="46" rx="8" class="il-paper"/>
+            <rect x="238" y="286" width="68" height="46" rx="8" class="il-outline"/>
+            <rect x="246" y="294" width="52" height="30" rx="4" class="il-sage"/>
+            <path d="M254 304 h30" class="il-screen-line"/>
+            <path d="M254 313 h20" class="il-screen-line"/>
+            <path d="M312 280 q2 8 10 10 q-8 2 -10 10 q-2 -8 -10 -10 q8 -2 10 -10 z" class="il-gold"/>
+          </g>
+
+          <!-- older woman -->
+          <g>
+            <path d="M400 274 a9 9 0 0 0 -15 5" class="il-cane"/>
+            <path d="M400 274 L404 356" class="il-cane"/>
+            <rect x="342" y="322" width="12" height="36" rx="6" class="il-navy"/>
+            <rect x="370" y="322" width="12" height="36" rx="6" class="il-navy"/>
+            <path d="M338 272 L332 298" class="il-arm-gold"/>
+            <path d="M386 272 L392 296" class="il-arm-gold"/>
+            <rect x="334" y="246" width="54" height="78" rx="22" class="il-gold"/>
+            <path d="M336 262 q24 -16 52 0 l0 12 q-26 -14 -52 0 z" class="il-kraft"/>
+            <circle cx="360" cy="222" r="22" class="il-skin-c"/>
+            <path d="M338 220 a22 22 0 0 1 44 0" class="il-hair-silver"/>
+            <circle cx="352" cy="224" r="7.5" class="il-glasses"/>
+            <circle cx="370" cy="224" r="7.5" class="il-glasses"/>
+            <path d="M359.5 224 h3" class="il-glasses"/>
+            <circle cx="352" cy="224" r="2.2" class="il-navy"/>
+            <circle cx="370" cy="224" r="2.2" class="il-navy"/>
+            <path d="M352 234 q8 7 16 0" class="il-smile"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave" data-from="paper" data-to="cream" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
+      <path d="M0,34 C220,4 430,58 700,32 C980,4 1200,54 1440,24 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <!-- ============ WHY ============ -->
+  <section class="section section-why" id="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <p class="kicker kicker-coral">Why I do this</p>
+      <h2 id="why-h">AI is moving faster than anyone's chance to understand it</h2>
+      <p class="section-lede">
+        The tools arrived first. The teaching never showed up. That gap is where I work,
+        and it looks a little different depending on where you're standing.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card card-coral">
+          <span class="card-art" aria-hidden="true">
+            <svg viewBox="0 0 80 80" focusable="false">
+              <circle cx="40" cy="40" r="38" class="il-wash-coral"/>
+              <rect x="18" y="20" width="44" height="30" rx="4" class="il-paper"/>
+              <rect x="18" y="20" width="44" height="30" rx="4" class="il-outline-thin"/>
+              <path d="M25 30 h18" class="il-screen-line"/>
+              <path d="M25 38 h26" class="il-screen-line"/>
+              <path d="M25 46 h12" class="il-screen-line"/>
+              <path d="M34 50 h12 l3 8 h-18 z" class="il-navy"/>
+              <path d="M22 62 h36" class="il-stroke-navy-thin"/>
+              <circle cx="62" cy="24" r="10" class="il-gold"/>
+              <path d="M62 19 v6 M62 29 v1.5" class="il-stroke-navy-thin"/>
+            </svg>
+          </span>
+          <h3>In classrooms</h3>
+          <p>
+            Students have access to AI tools with no one to talk through the honest questions
+            with: what counts as your own work, what the tool gets wrong, and when to check it
+            against something real.
+          </p>
+        </article>
+
+        <article class="card card-teal">
+          <span class="card-art" aria-hidden="true">
+            <svg viewBox="0 0 80 80" focusable="false">
+              <circle cx="40" cy="40" r="38" class="il-wash-teal"/>
+              <path d="M18 56 h44 l6 8 h-56 z" class="il-navy"/>
+              <rect x="24" y="26" width="32" height="30" rx="3" class="il-paper"/>
+              <rect x="24" y="26" width="32" height="30" rx="3" class="il-outline-thin"/>
+              <path d="M30 34 h20" class="il-screen-line"/>
+              <path d="M30 42 h14" class="il-screen-line"/>
+              <rect x="58" y="34" width="13" height="18" rx="3" class="il-coral"/>
+              <path d="M58 40 h13" class="il-stroke-navy-thin"/>
+              <path d="M18 22 q2 7 9 9 q-7 2 -9 9 q-2 -7 -9 -9 q7 -2 9 -9 z" class="il-gold"/>
+            </svg>
+          </span>
+          <h3>At work</h3>
+          <p>
+            AI shows up in people's jobs overnight, usually with a login and no training.
+            Nobody explains what's safe to paste into it, where the data goes, or how bias
+            slips into an answer that sounds confident.
+          </p>
+        </article>
+
+        <article class="card card-gold">
+          <span class="card-art" aria-hidden="true">
+            <svg viewBox="0 0 80 80" focusable="false">
+              <circle cx="40" cy="40" r="38" class="il-wash-gold"/>
+              <path d="M16 40 L40 20 L64 40" class="il-stroke-navy"/>
+              <rect x="24" y="40" width="32" height="26" rx="3" class="il-paper"/>
+              <rect x="24" y="40" width="32" height="26" rx="3" class="il-outline-thin"/>
+              <rect x="35" y="50" width="10" height="16" rx="2" class="il-coral"/>
+              <circle cx="24" cy="26" r="6" class="il-sage"/>
+              <circle cx="58" cy="24" r="5" class="il-teal"/>
+              <path d="M50 56 h8" class="il-stroke-navy-thin"/>
+            </svg>
+          </span>
+          <h3>At home</h3>
+          <p>
+            Older adults and families are meeting the risks of AI before the benefits. Scam calls
+            can now copy a grandchild's voice. Meanwhile the tools that could read a prescription
+            label aloud, translate a doctor's letter, or describe what is in a photo sit unused,
+            because nobody sat down and showed them.
+          </p>
+        </article>
+      </div>
+
+      <blockquote class="pull-quote">
+        <p>My work is making sure no one is left out of understanding AI and how the world will change.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <div class="wave" data-from="cream" data-to="navy" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
+      <path d="M0,26 C260,58 470,6 720,30 C960,54 1210,8 1440,36 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section section-about" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <p class="kicker kicker-light">About Me</p>
+
+      <h2 id="about-h">I grew up in a brand new digital world. The next one should include all of us.</h2>
+
+      <figure class="about-banner">
+        <a class="connect-badge" href="https://www.linkedin.com/in/lea-ademilola/" target="_blank" rel="noopener">
+          Let's<br>Connect!
+        </a>
+        <img src="lea-about.jpg" alt="Lea Ademilola seated in an auditorium, reading through her notes."
+             id="leaPhoto" width="953" height="533">
+        <div class="portrait-fallback" id="portraitFallback" hidden>
+          <svg viewBox="0 0 240 240" role="img" aria-label="Illustrated portrait of Lea Ademilola, smiling, wearing glasses.">
+            <circle cx="120" cy="120" r="118" class="il-wash-kraft"/>
+            <circle cx="120" cy="120" r="104" class="il-wash-sage"/>
+            <path d="M36 240 a84 84 0 0 1 168 0 z" class="il-teal"/>
+            <path d="M100 174 h40 v22 h-40 z" class="il-skin-b"/>
+            <path d="M98 178 l22 20 22-20 12 8-34 30-34-30z" class="il-paper"/>
+            <circle cx="120" cy="114" r="73" class="il-hair"/>
+            <circle cx="120" cy="128" r="55" class="il-skin-b"/>
+            <circle cx="100" cy="126" r="19" class="il-glasses"/>
+            <circle cx="142" cy="126" r="19" class="il-glasses"/>
+            <path d="M119 126 h4" class="il-glasses"/>
+            <circle cx="100" cy="126" r="3" class="il-navy"/>
+            <circle cx="142" cy="126" r="3" class="il-navy"/>
+            <path d="M104 152 q16 14 32 0" class="il-smile-lg"/>
+            <circle cx="70" cy="150" r="5" class="il-gold"/>
+            <circle cx="170" cy="150" r="5" class="il-gold"/>
+          </svg>
+        </div>
+        <figcaption class="portrait-badges">
+          <span class="portrait-badge">Hi, I'm Lea</span>
+          <span class="portrait-badge badge-coral">Gen Z</span>
+          <span class="portrait-badge badge-sage">AI Literacy Coach</span>
+        </figcaption>
+      </figure>
+
+      <div class="about-flow">
+        <div class="about-pin-track" aria-hidden="true">
+          <aside class="about-pin" id="aboutPin">
+            <a href="https://www.linkedin.com/in/lea-ademilola/" target="_blank" rel="noopener" tabindex="-1">
+              <img src="lea-headshot.jpg" alt="" width="900" height="900">
+            </a>
+            <span class="pin-badge pin-gold">Hi, I'm Lea</span>
+            <span class="pin-badge pin-coral">Gen Z</span>
+            <span class="pin-badge pin-sage">AI Literacy Coach</span>
+          </aside>
+        </div>
+
+        <div class="about-story">
+          <p>
+            I grew up as the internet and social media were taking over everyday life, and there
+            was never a class for any of it. Nobody sat us down to explain what we were signing up
+            for, what was safe to share, who was watching, or what we could believe. We worked it
+            out by trial and error, in public, and some of those mistakes followed people for years.
+          </p>
+          <p>
+            At Howard University I studied Computer Information Systems, which taught me to see
+            technology as a set of systems rather than magic. They are things built by people, with
+            their choices baked in, that everybody else then has to live inside. And once you see it
+            that way, you can't unsee who is left out.
+          </p>
+          <p>
+            AI is the next version of that moment, and it's arriving fast. I decided early that the
+            generations coming up behind me shouldn't have to work it out alone the way we did, and
+            neither should the ones who came before me. So I sit down with people and explain it in
+            their own words, at their own pace.
+          </p>
+
+          <blockquote class="about-quote">
+            <p>You're not behind, but you do need to start now. This is just the beginning.</p>
+          </blockquote>
+
+          <p>
+            Almost everywhere I teach I hear the same two sentences: <em>"I'm too old for this"</em>
+            and <em>"I'm just not a tech person."</em> I don't believe either one. What people
+            usually mean is that nobody ever explained new technology to them without making them
+            feel small, and that is a teaching and access problem, not a limit on what you can learn.
+          </p>
+          <p>
+            My sessions look nothing like training videos or lazy ebooks and courses. Instead of
+            vocabulary lists, we open the real tools and use them on something from your own life,
+            upholding ethics and truth along the way. For a fifth grader, that means learning to use
+            AI without leaning on it to do the thinking. For a grandfather, it's an opportunity to
+            analyze and action on the Medicare letter that nobody in the family can decode. For
+            someone job hunting, it means understanding how companies use AI to screen applications,
+            and then using it themselves to show up as a strong candidate. You can ask whatever you
+            want, as many times as you want, because preparation takes time.
+          </p>
+          <p>
+            We also talk about the parts AI companies fail to share with you. These tools are not
+            all-knowing magicians; they get things wrong and hand you false information with complete
+            confidence. Your words go somewhere the moment you type them in, and you deserve to know
+            where. Whole communities were missing from the data that trained them, and that leaves
+            room for bias.
+          </p>
+          <p>
+            Understanding bias matters most for the people I sit with. Many of them are kids in
+            underfunded schools, seniors living on a fixed income, or families in neighborhoods that
+            get new technology last, never receiving the help to leverage it for their own benefit
+            and prepare for the future.
+          </p>
+          <p>
+            By day I lead teams of engineers and technology professionals in retail engineering,
+            turning complex ideas into things real people use at a scale where one small decision
+            reaches millions of customers. Working that close to how technology gets built shows you
+            how many people it quietly leaves behind. I believe access like mine comes with a
+            responsibility to hand it back, and teaching others is how I plan to do that.
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           BACKGROUND
+           Lines marked "ADD:" are the ones only you can fill in.
+           Everything showing now is accurate, so this is safe to publish.
+           ============================================================ -->
+      <div class="about-bg">
+        <h3 class="bg-head">Background</h3>
+
+        <div class="bg-grid">
+
+          <article class="bg-card bg-sage">
+            <h4>Education</h4>
+            <ul class="creds-rows">
+              <li>
+                <span class="cd-title">BBA, Computer Information Systems</span>
+                <span class="cd-org">Howard University</span>
+                <span class="cd-note">Business and technology together: how systems get built, and who they get built for.</span>
+                <!-- ADD: graduation year, honors, concentration or minor -->
+              </li>
+            </ul>
+          </article>
+
+          <article class="bg-card bg-gold">
+            <h4>Certifications</h4>
+            <ul class="creds-rows">
+              <!-- ADD (optional): the year for each, e.g.
+                   <span class="cd-org">Harvard Business School &middot; 2024</span> -->
+              <li>
+                <span class="cd-title">Credential of Digital Innovation &amp; Strategy</span>
+                <span class="cd-org">Harvard Business School</span>
+              </li>
+              <li>
+                <span class="cd-title">Summer Venture in Management Program</span>
+                <span class="cd-org">Harvard Business School</span>
+              </li>
+              <li>
+                <span class="cd-title">Prompt Engineering for ChatGPT</span>
+                <span class="cd-org">Vanderbilt University</span>
+              </li>
+              <li>
+                <span class="cd-title">Generative AI Essentials: Overview and Impact</span>
+                <span class="cd-org">University of Michigan College of Engineering</span>
+              </li>
+              <li>
+                <span class="cd-title">Introduction to Large Language Models</span>
+                <span class="cd-org">Google Cloud Training Online</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="bg-card bg-teal">
+            <h4>Experience</h4>
+            <ul class="creds-rows">
+              <!-- ADD (optional): start and end years for each role -->
+              <li>
+                <span class="cd-title">Retail Engineering Project Manager</span>
+                <span class="cd-org">Apple</span>
+                <span class="cd-note">I lead teams of intelligent engineers and technology professionals to turn complex ideas into tangible realities focused on customer experience, impact and scalability.</span>
+              </li>
+              <li>
+                <span class="cd-title">Media Products Business Operations</span>
+                <span class="cd-org">Apple</span>
+              </li>
+              <li>
+                <span class="cd-title">Data Science &amp; Visualization</span>
+                <span class="cd-org">Thermo Fisher Scientific</span>
+              </li>
+              <li>
+                <span class="cd-title">Client Success Coordinator</span>
+                <span class="cd-org">Wall Street Prep</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="bg-card bg-coral">
+            <h4>Teaching &amp; speaking</h4>
+            <ul class="creds-rows">
+              <li>
+                <span class="cd-title">Workshops, keynotes, and panels</span>
+                <span class="cd-org">Schools, senior centers, and community organizations</span>
+                <span class="cd-note">Plus one-on-one and small group sessions, virtual or in person.</span>
+                <!-- ADD: venues or events you've spoken at, audience sizes, dates,
+                     and any testimonial you have permission to quote -->
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+
+      <ul class="about-facts">
+      <li class="fact-coral"><strong>Plain language, always.</strong> If I say something you don't recognize, stop me. That's the deal.</li>
+      <li class="fact-gold"><strong>Straight answers.</strong> AI has real strengths and real limits, and I'll tell you which is which.</li>
+      <li class="fact-sage"><strong>Volunteer time every month.</strong> Churches, afterschool programs, and shelters.</li>
+      <li class="fact-teal"><strong>Wherever you are.</strong> Your building, your community room, or a video call.</li>
+      </ul>
+
+      <p class="about-tagline">Ethical AI literacy for every generation.</p>
+    </div>
+  </section>
+
+  <div class="wave" data-from="navy" data-to="paper" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
+      <path d="M0,30 C200,60 460,4 700,28 C950,52 1190,10 1440,32 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <!-- ============ WHO ============ -->
+  <section class="section section-who" id="who" aria-labelledby="who-h">
+    <div class="wrap">
+      <p class="kicker kicker-teal">Who I teach</p>
+      <h2 id="who-h">If you've ever felt behind on this, you're exactly who I'm here for</h2>
+
+      <ul class="who-list">
+        <li class="who-teal">
+          <span class="spot" aria-hidden="true">
+            <svg viewBox="0 0 80 80" focusable="false">
+              <circle cx="40" cy="40" r="38" class="il-wash-teal"/>
+              <path d="M20 72 a20 20 0 0 1 40 0 z" class="il-gold"/>
+              <circle cx="40" cy="34" r="15" class="il-skin-c"/>
+              <path d="M25 32 a15 15 0 0 1 30 0" class="il-hair-silver"/>
+              <circle cx="34" cy="35" r="5" class="il-glasses"/>
+              <circle cx="47" cy="35" r="5" class="il-glasses"/>
+              <path d="M39.5 35 h2" class="il-glasses"/>
+              <path d="M35 44 q5 4 10 0" class="il-smile"/>
+              <rect x="28" y="58" width="24" height="16" rx="3" class="il-paper"/>
+              <rect x="28" y="58" width="24" height="16" rx="3" class="il-outline-thin"/>
+              <path d="M33 64 h14" class="il-screen-line"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Seniors and senior living communities</h3>
+            <p>
+              Starting from the beginning, at a comfortable pace, with plenty of room for questions.
+              What AI is, where you're already running into it, how to spot a scam, and what you
+              never need to hand over.
+            </p>
+          </div>
+        </li>
+
+        <li class="who-coral">
+          <span class="spot" aria-hidden="true">
+            <svg viewBox="0 0 80 80" focusable="false">
+              <circle cx="40" cy="40" r="38" class="il-wash-coral"/>
+              <path d="M12 72 a18 18 0 0 1 36 0 z" class="il-teal"/>
+              <circle cx="30" cy="34" r="13" class="il-skin-b"/>
+              <path d="M17 33 a13 13 0 0 1 26 0" class="il-hair-stroke"/>
+              <circle cx="26" cy="35" r="2" class="il-navy"/>
+              <circle cx="34" cy="35" r="2" class="il-navy"/>
+              <path d="M26 41 q4 4 8 0" class="il-smile"/>
+              <path d="M44 72 a12 12 0 0 1 24 0 z" class="il-gold"/>
+              <circle cx="56" cy="47" r="10" class="il-skin-a"/>
+              <circle cx="49" cy="41" r="5" class="il-hair"/>
+              <circle cx="63" cy="41" r="5" class="il-hair"/>
+              <circle cx="53" cy="47" r="1.7" class="il-navy"/>
+              <circle cx="59" cy="47" r="1.7" class="il-navy"/>
+              <path d="M53 52 q3 3 6 0" class="il-smile"/>
+              <path d="M46 16 c0-4 6-4 6 0 c0-4 6-4 6 0 c0 5-6 9-6 9 s-6-4-6-9z" class="il-coral-solid"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Parents and kids, learning together</h3>
+            <p>
+              One session, both generations in the room. Kids get honest guidance instead of rumors,
+              and parents leave able to keep the conversation going at home.
+            </p>
+          </div>
+        </li>
+
+        <li class="who-gold">
+          <span class="spot" aria-hidden="true">
+            <svg viewBox="0 0 80 80" focusable="false">
+              <circle cx="40" cy="40" r="38" class="il-wash-gold"/>
+              <rect x="24" y="28" width="32" height="34" rx="10" class="il-coral"/>
+              <path d="M32 28 a8 8 0 0 1 16 0" class="il-stroke-navy"/>
+              <rect x="30" y="42" width="20" height="12" rx="3" class="il-kraft"/>
+              <rect x="18" y="64" width="44" height="8" rx="2" class="il-teal"/>
+              <path d="M52 20 l10 10 -20 20 -10 -10 z" class="il-gold-solid"/>
+              <path d="M32 40 l-4 12 12-4z" class="il-paper"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Schools and afterschool programs</h3>
+            <p>
+              Age-appropriate sessions on using AI with integrity: what it's good for, what it
+              makes up, and why your own thinking is still the point.
+            </p>
+          </div>
+        </li>
+
+        <li class="who-sage">
+          <span class="spot" aria-hidden="true">
+            <svg viewBox="0 0 80 80" focusable="false">
+              <circle cx="40" cy="40" r="38" class="il-wash-sage"/>
+              <path d="M16 58 h40 l7 9 h-54 z" class="il-navy"/>
+              <rect x="22" y="26" width="30" height="32" rx="3" class="il-paper"/>
+              <rect x="22" y="26" width="30" height="32" rx="3" class="il-outline-thin"/>
+              <path d="M28 34 h18" class="il-screen-line"/>
+              <path d="M28 42 h12" class="il-screen-line"/>
+              <path d="M28 50 h16" class="il-screen-line"/>
+              <rect x="58" y="30" width="13" height="18" rx="3" class="il-coral"/>
+              <path d="M58 36 h13" class="il-stroke-navy-thin"/>
+              <circle cx="18" cy="22" r="5" class="il-gold"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Working professionals</h3>
+            <p>
+              Practical footing for people whose jobs changed without warning: privacy, bias,
+              what to verify, and where these tools genuinely save time.
+            </p>
+          </div>
+        </li>
+
+        <li class="who-navy">
+          <span class="spot" aria-hidden="true">
+            <svg viewBox="0 0 80 80" focusable="false">
+              <circle cx="40" cy="40" r="38" class="il-wash-kraft"/>
+              <path d="M18 38 L40 22 L62 38" class="il-stroke-navy"/>
+              <rect x="26" y="38" width="28" height="22" rx="3" class="il-paper"/>
+              <rect x="26" y="38" width="28" height="22" rx="3" class="il-outline-thin"/>
+              <rect x="36" y="46" width="8" height="14" rx="2" class="il-teal"/>
+              <path d="M20 66 L40 72 L60 66" class="il-stroke-navy-thin"/>
+              <circle cx="18" cy="66" r="6" class="il-coral"/>
+              <circle cx="40" cy="73" r="6" class="il-gold"/>
+              <circle cx="62" cy="66" r="6" class="il-sage"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Organizations and nonprofits</h3>
+            <p>
+              For teams that need AI literacy but don't have anyone in-house to lead it. I'll meet
+              your staff and the people you serve where they are.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wave" data-from="paper" data-to="teal" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
+      <path d="M0,32 C230,2 450,56 710,30 C970,4 1200,56 1440,28 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <section class="section section-principles" id="ethics" aria-labelledby="principles-h">
+    <div class="wrap">
+      <p class="kicker kicker-navy">How I teach</p>
+      <h2 id="principles-h">Four things I don't compromise on</h2>
+
+      <ol class="principles">
+        <li class="pr-coral">
+          <span class="p-num" aria-hidden="true">01</span>
+          <h3>Ethics first</h3>
+          <p>We talk about what's right alongside what's possible, in every session, starting in the first few minutes.</p>
+        </li>
+        <li class="pr-teal">
+          <span class="p-num" aria-hidden="true">02</span>
+          <h3>Accessible to everyone</h3>
+          <p>You can walk in knowing nothing at all. Ask the same question three times and I'll answer it three times.</p>
+        </li>
+        <li class="pr-gold">
+          <span class="p-num" aria-hidden="true">03</span>
+          <h3>Knowledge you keep</h3>
+          <p>You leave knowing how the thing actually works, so the next new tool is one you can figure out yourself.</p>
+        </li>
+        <li class="pr-sage">
+          <span class="p-num" aria-hidden="true">04</span>
+          <h3>Practice over theory</h3>
+          <p>Hands on the tools, using your own examples, from the first few minutes.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="wave" data-from="teal" data-to="sage" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
+      <path d="M0,28 C250,58 460,6 720,32 C980,58 1190,6 1440,30 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <section class="section section-sessions" id="sessions" aria-labelledby="sessions-h">
+    <div class="wrap">
+      <p class="kicker kicker-sage">Sessions</p>
+      <h2 id="sessions-h">Three ways we can work together</h2>
+      <p class="section-lede">
+        Every session is hands-on and built around the people in the room. Tell me who they are
+        and I'll shape it to fit.
+      </p>
+
+      <div class="grid grid-3 offer-grid">
+        <article class="offer offer-coral">
+          <span class="offer-art" aria-hidden="true">
+            <svg viewBox="0 0 120 80" focusable="false">
+              <circle cx="30" cy="46" r="14" class="il-skin-b"/>
+              <path d="M16 45 a14 14 0 0 1 28 0" class="il-hair-stroke"/>
+              <path d="M12 80 a18 18 0 0 1 36 0 z" class="il-teal"/>
+              <circle cx="26" cy="47" r="2.2" class="il-navy"/>
+              <circle cx="35" cy="47" r="2.2" class="il-navy"/>
+              <path d="M26 54 q5 4 9 0" class="il-smile"/>
+              <circle cx="90" cy="46" r="14" class="il-skin-a"/>
+              <circle cx="79" cy="36" r="7" class="il-hair"/>
+              <circle cx="99" cy="36" r="7" class="il-hair"/>
+              <circle cx="85" cy="47" r="2.2" class="il-navy"/>
+              <circle cx="94" cy="47" r="2.2" class="il-navy"/>
+              <path d="M85 54 q5 4 9 0" class="il-smile"/>
+              <path d="M72 80 a18 18 0 0 1 36 0 z" class="il-gold"/>
+              <path d="M48 8 h24 a10 10 0 0 1 10 10 v8 a10 10 0 0 1 -10 10 h-8 l-8 10 v-10 h-8 a10 10 0 0 1 -10 -10 v-8 a10 10 0 0 1 10 -10 z" class="il-paper"/>
+              <path d="M48 8 h24 a10 10 0 0 1 10 10 v8 a10 10 0 0 1 -10 10 h-8 l-8 10 v-10 h-8 a10 10 0 0 1 -10 -10 v-8 a10 10 0 0 1 10 -10 z" class="il-outline-thin"/>
+              <circle cx="54" cy="22" r="3" class="il-coral-solid"/>
+              <circle cx="63" cy="22" r="3" class="il-gold-solid"/>
+              <circle cx="72" cy="22" r="3" class="il-teal"/>
+            </svg>
+          </span>
+          <h3>One-on-one &amp; small groups</h3>
+          <p class="offer-meta">60–90 minutes &middot; Virtual or in person</p>
+          <p>
+            Sit down with me, bring your actual questions, and use the tools with someone
+            patient beside you. Good for individuals, couples, families, or a handful of
+            colleagues.
+          </p>
+        </article>
+
+        <article class="offer offer-teal">
+          <span class="offer-art" aria-hidden="true">
+            <svg viewBox="0 0 120 80" focusable="false">
+              <rect x="30" y="4" width="60" height="28" rx="4" class="il-paper"/>
+              <rect x="30" y="4" width="60" height="28" rx="4" class="il-outline-thin"/>
+              <path d="M38 14 h30" class="il-screen-line"/>
+              <path d="M38 22 h20" class="il-screen-line"/>
+              <ellipse cx="60" cy="58" rx="40" ry="15" class="il-sage"/>
+              <ellipse cx="60" cy="58" rx="40" ry="15" class="il-outline-thin"/>
+              <circle cx="18" cy="46" r="8" class="il-coral"/>
+              <circle cx="42" cy="38" r="8" class="il-gold"/>
+              <circle cx="78" cy="38" r="8" class="il-teal"/>
+              <circle cx="102" cy="46" r="8" class="il-kraft"/>
+              <circle cx="60" cy="74" r="8" class="il-navy"/>
+            </svg>
+          </span>
+          <h3>Workshops for organizations</h3>
+          <p class="offer-meta">Half day or full day &middot; On site or virtual</p>
+          <p>
+            A hands-on session for your staff, students, residents, or members. Everyone
+            practices on real examples and leaves with something they can use the same week.
+          </p>
+        </article>
+
+        <article class="offer offer-gold">
+          <span class="offer-art" aria-hidden="true">
+            <svg viewBox="0 0 120 80" focusable="false">
+              <rect x="52" y="8" width="18" height="32" rx="9" class="il-navy"/>
+              <rect x="56" y="14" width="10" height="8" rx="4" class="il-sage"/>
+              <path d="M61 40 v22" class="il-stroke-navy"/>
+              <path d="M46 70 h30" class="il-stroke-navy"/>
+              <path d="M84 14 a26 26 0 0 1 0 34" class="il-stroke-gold"/>
+              <path d="M96 6 a38 38 0 0 1 0 50" class="il-stroke-coral"/>
+              <path d="M38 14 a26 26 0 0 0 0 34" class="il-stroke-gold"/>
+              <path d="M26 6 a38 38 0 0 0 0 50" class="il-stroke-coral"/>
+            </svg>
+          </span>
+          <h3>Talks &amp; panels</h3>
+          <p class="offer-meta">30–60 minutes &middot; Keynote or panel</p>
+          <p>
+            A clear, warm talk for conferences, community events, staff days, and faith or
+            civic gatherings. I explain where AI genuinely stands today and what it means for
+            the people in the room.
+          </p>
+        </article>
+      </div>
+
+      <div class="volunteer">
+        <span class="volunteer-art" aria-hidden="true">
+          <svg viewBox="0 0 96 96" focusable="false">
+            <circle cx="48" cy="48" r="46" class="il-paper"/>
+            <path d="M48 82 C20 62 14 46 24 34 c8-10 18-6 24 4 6-10 16-14 24-4 10 12 4 28-24 48z" class="il-coral-solid"/>
+            <path d="M18 16 q2 8 10 10 q-8 2 -10 10 q-2 -8 -10 -10 q8 -2 10 -10 z" class="il-gold-solid"/>
+            <path d="M80 20 q1.5 6 8 7.5 q-6.5 1.5 -8 8 q-1.5 -6.5 -8 -8 q6.5 -1.5 8 -7.5 z" class="il-teal"/>
+          </svg>
+        </span>
+        <div>
+          <h3>On volunteering, and on budget</h3>
+          <p>
+            I set aside time every month for churches, afterschool programs, and shelters.
+            These are places where this teaching is needed and rarely funded. If cost is what's
+            standing between
+            your group and a session, say so plainly in your email. We'll find a way.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave" data-from="sage" data-to="navy" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
+      <path d="M0,34 C220,4 470,54 710,28 C960,2 1210,52 1440,26 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section-contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap contact-grid">
+      <div class="contact-copy">
+        <p class="kicker kicker-light">Get in touch</p>
+        <h2 id="contact-h">Help me make sure no one gets left behind</h2>
+        <p class="contact-lede">
+          Maybe it's a group you're responsible for: your students, your residents, your
+          members, your family. Maybe it's just you, and you're tired of being out of the loop.
+          Whoever it's&nbsp;for, I'd&nbsp;like&nbsp;to&nbsp;help.
+        </p>
+
+        <div class="contact-actions">
+          <a class="btn btn-sage btn-big" href="mailto:coachlea.ai@gmail.com?subject=AI%20%26%20technical%20literacy%20inquiry">
+            coachlea.ai@gmail.com
+          </a>
+          <button type="button" class="copy-email" id="copyEmail" hidden>Copy address</button>
+        </div>
+        <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+
+        <p class="contact-help">
+          Helpful to include: who your group is, roughly how many people, and whether you want it
+          in person or virtual. Not sure yet? Write anyway.
+        </p>
+
+        <p class="contact-social">
+          You can also find me on
+          <a class="social-link" href="https://www.linkedin.com/in/lea-ademilola/"
+             target="_blank" rel="noopener"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>LinkedIn</a>
+        </p>
+      </div>
+
+      <div class="contact-art" aria-hidden="true">
+        <svg viewBox="0 0 200 170" focusable="false">
+          <circle cx="100" cy="90" r="76" class="il-navy-soft-fill"/>
+          <path d="M34 54 h132 a8 8 0 0 1 8 8 v70 a8 8 0 0 1 -8 8 h-132 a8 8 0 0 1 -8 -8 v-70 a8 8 0 0 1 8 -8 z" class="il-kraft"/>
+          <path d="M28 60 L100 112 L172 60" class="il-envelope-line"/>
+          <path d="M26 132 L74 92" class="il-envelope-line"/>
+          <path d="M174 132 L126 92" class="il-envelope-line"/>
+          <path d="M40 24 q2 9 11 11 q-9 2 -11 11 q-2 -9 -11 -11 q9 -2 11 -11 z" class="il-gold-solid float-a"/>
+          <path d="M164 20 q1.5 7 9 8.5 q-7.5 1.5 -9 9 q-1.5 -7.5 -9 -9 q7.5 -1.5 9 -8.5 z" class="il-sage float-b"/>
+          <circle cx="18" cy="100" r="6" class="il-coral-solid float-c"/>
+          <circle cx="184" cy="104" r="7" class="il-sage float-a"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="monogram monogram-sm" aria-hidden="true">
+      <svg viewBox="0 0 64 64" focusable="false"><circle cx="32" cy="32" r="30" class="mono-ring"/><text x="32" y="43" text-anchor="middle" class="mono-text">LA</text></svg>
+    </span>
+    <div class="footer-words">
+      <p class="footer-name">Lea Ademilola</p>
+      <p class="footer-tag">Ethical AI literacy for every generation.</p>
+      <p class="footer-contact">
+        <a href="mailto:coachlea.ai@gmail.com?subject=AI%20%26%20technical%20literacy%20inquiry">coachlea.ai@gmail.com</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a class="social-link" href="https://www.linkedin.com/in/lea-ademilola/" target="_blank" rel="noopener"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>LinkedIn</a>
+      </p>
+    </div>
+    <p class="footer-copy">&copy; <span id="year">2026</span> Lea Ademilola</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
