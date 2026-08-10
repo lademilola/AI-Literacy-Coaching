@@ -772,6 +772,160 @@ html.js .site-nav[data-collapsed="true"] { display: none; }
   html.js .reveal.is-visible { opacity: 1; transform: none; }
 }
 
+/* ---------- Contact form ----------
+   This section is now nothing but the form, so the card carries the heading
+   itself. Same card language as the rest of the page: paper on navy, 2px
+   border, one hard offset shadow. Four questions laid out across the card
+   rather than down it, and the card is held to a readable width instead of
+   stretching the full 72rem. Inputs get a 2px resting border rather than a
+   1px hairline so the tap targets are obvious to someone who isn't sure
+   where they're meant to type. */
+.contact-form {
+  max-width: 52rem; margin-inline: auto;
+  background: var(--paper-pure); color: var(--ink);
+  border: 2px solid var(--navy); border-radius: var(--radius);
+  padding: 1.5rem 1.4rem 1.6rem;
+  box-shadow: 8px 8px 0 0 var(--sage);
+}
+@media (min-width: 46rem) { .contact-form { padding: 2.1rem 2rem 2.2rem; } }
+
+/* Beats `.section-contact h2`, which paints headings near-white for the navy
+   background — inside this card the background is paper, so it needs navy. */
+.section-contact .form-head { margin: 0 0 .5rem; color: var(--navy); max-width: none; }
+.form-lede { margin: 0 0 1.5rem; font-size: .95rem; color: var(--ink-soft); max-width: 44rem; }
+
+/* Name and email share a row where there's space; the question and the note
+   always run the full width of the card. */
+.form-grid { display: grid; gap: 1rem 1.25rem; }
+@media (min-width: 46rem) { .form-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.field { display: grid; gap: .35rem; align-content: start; }
+.field > label {
+  font-size: .78rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--navy);
+}
+.field-msg { grid-column: 1 / -1; }
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%; padding: .65rem .75rem;
+  font-family: var(--body); font-size: 1rem; line-height: 1.5;
+  color: var(--ink); background: var(--paper);
+  border: 2px solid var(--line); border-radius: 10px;
+  transition: border-color .18s ease, background-color .18s ease;
+}
+.contact-form ::placeholder { color: var(--ink-soft); opacity: .75; }
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--teal-deep); background: var(--paper-pure);
+}
+.contact-form textarea { resize: vertical; min-height: 6rem; }
+
+/* Native select chrome varies wildly between browsers, so the arrow is
+   drawn here instead. Encoded literally for the same reason as the
+   illustration palette above: some engines won't resolve var() in a URL. */
+.contact-form select {
+  appearance: none; -webkit-appearance: none;
+  padding-right: 2.25rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 L6 6.5 L11 1.5' fill='none' stroke='%231B2740' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right .8rem center; background-size: .7rem;
+}
+
+/* Button and the reassurance next to it, side by side where there's room. */
+.form-actions {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: .8rem 1.5rem; margin-top: 1.3rem;
+}
+.form-submit { width: auto; flex: 0 0 auto; }
+.form-note { flex: 1 1 20rem; margin: 0; font-size: .82rem; line-height: 1.55; color: var(--ink-soft); }
+
+.form-status {
+  min-height: 1.35rem; margin: .7rem 0 0;
+  font-size: .9rem; font-weight: 600; color: var(--sage-deep);
+}
+.form-status[data-state="error"] { color: var(--coral-deep); }
+
+/* Spam trap — off-screen rather than display:none, which some bots check for. */
+.form-trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+/* ---------- Mobile density ----------
+   Phones stack every grid to one column, so the page is naturally much
+   taller here than on desktop. These overrides trim decorative spacing
+   only — padding, gaps, and the purely-illustrative hero art — never
+   body copy or line-height, since a chunk of this audience reads at
+   larger text sizes and needs that room. */
+@media (max-width: 46rem) {
+  .hero { padding: clamp(1.5rem, 6vw, 4.5rem) 0 clamp(.75rem, 3vw, 2rem); }
+  .hero-photo { width: 8.5rem; }
+  .hero-art { max-width: 17rem; }
+
+  .section { padding: clamp(2.25rem, 7vw, 5.5rem) 0; }
+
+  .grid { gap: 1rem; }
+  .card { padding: 1.25rem 1.25rem; }
+
+  .who-list { gap: .9rem; margin-top: 1.75rem; }
+  .who-list li { padding: 1.1rem 1.1rem; }
+
+  .bg-grid { gap: .9rem; }
+  .bg-card { padding: 1rem 1rem 1.1rem; }
+  .about-bg { margin-top: 2rem; }
+  .about-facts { margin-top: 1.75rem; gap: .85rem 1.5rem; }
+
+  .principles { gap: .9rem; margin-top: 1.75rem; }
+  .principles li { padding: 1.1rem 1.2rem; }
+
+  .offer { padding: 1.2rem 1.2rem 1.35rem; }
+  .volunteer { margin-top: 1.75rem; padding: 1.3rem 1.25rem; }
+
+  .pull-quote { margin-top: 2rem; padding: 1.35rem 1.35rem 1.35rem 1.25rem; }
+
+  /* The form is the whole contact section now, so it only loses padding. */
+  .contact-form { padding: 1.15rem 1.1rem 1.3rem; }
+  .form-head { margin-bottom: .4rem; }
+  .form-lede { margin-bottom: 1.1rem; }
+  .form-grid { gap: .8rem; }
+  .form-actions { margin-top: 1.1rem; }
+  .form-submit { width: 100%; }
+}
+
+/* ---------- Mobile card carousels ----------
+   Stacked one-per-row, each of these groups costs three or four screens of
+   scrolling on a phone. Sideways instead: one card at a time, the next one
+   peeking so it's obvious there's more, and scroll-snap so a swipe lands
+   squarely rather than halfway. Only below the width where the grids would
+   have gone multi-column anyway, so nothing changes on a laptop.
+   The containers carry tabindex="0" in the markup because a scrollable
+   region has to be reachable by keyboard, not just by thumb. */
+@media (max-width: 46rem) {
+  .swipe {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-auto-columns: 84%;
+    gap: .85rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Room for the hard offset shadows, which the scroll box would clip. */
+    padding: .2rem .6rem 1rem .2rem;
+    margin-inline: -.2rem;
+  }
+  .swipe > * { scroll-snap-align: start; }
+
+  /* The last "Who I teach" card spans both columns at desktop widths; inside
+     a single-row scroller that would stretch it across every track. */
+  .who-list.swipe > li:last-child { grid-column: auto; }
+
+  /* A hairline track so the scroller reads as one strip on a light section. */
+  .swipe { scrollbar-width: thin; }
+}
+
 /* ---------- Print ---------- */
 @media print {
   .site-header, .cta-row, .copy-email, .site-nav, .wave, .contact-art { display: none !important; }
@@ -779,5 +933,5 @@ html.js .site-nav[data-collapsed="true"] { display: none; }
   .section-about, .section-contact, .site-footer, .section { background: #fff !important; color: #000 !important; }
   .section-about h2, .section-contact h2, .about-story p, .about-facts li, .about-tagline,
   .contact-lede, .contact-help, .footer-tag { color: #000 !important; }
-  .card, .offer, .who-list li, .principles li, .bg-card, .volunteer, .pull-quote { box-shadow: none !important; }
+  .card, .offer, .who-list li, .principles li, .bg-card, .volunteer, .pull-quote, .contact-form { box-shadow: none !important; }
 }

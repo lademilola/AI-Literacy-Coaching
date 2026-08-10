@@ -55,6 +55,7 @@
         <li><a href="#who">Who I teach</a></li>
         <li><a href="#ethics">Ethics</a></li>
         <li><a href="#sessions">Sessions</a></li>
+        <li><a href="https://calendar.app.google/qw42xcPHTknyBZ6HA" target="_blank" rel="noopener">Schedule a call</a></li>
         <li><a href="#contact" class="nav-cta">Get in touch</a></li>
       </ul>
     </nav>
@@ -234,7 +235,7 @@
         and it looks a little different depending on where you're standing.
       </p>
 
-      <div class="grid grid-3">
+      <div class="grid grid-3 swipe" tabindex="0" aria-label="Three cards, scrollable sideways on a phone">
         <article class="card card-coral">
           <span class="card-art" aria-hidden="true">
             <svg viewBox="0 0 80 80" focusable="false">
@@ -437,7 +438,7 @@
       <div class="about-bg">
         <h3 class="bg-head">Background</h3>
 
-        <div class="bg-grid">
+        <div class="bg-grid swipe" tabindex="0" aria-label="Background cards, scrollable sideways on a phone">
 
           <article class="bg-card bg-sage">
             <h4>Education</h4>
@@ -486,7 +487,7 @@
               <li>
                 <span class="cd-title">Retail Engineering Project Manager</span>
                 <span class="cd-org">Apple</span>
-                <span class="cd-note">I lead teams of intelligent engineers and technology professionals to turn complex ideas into tangible realities focused on customer experience, impact and scalability.</span>
+                <span class="cd-note">I drive complex, cross-organizational initiatives from ambiguous idea to worldwide launch, aligning engineering, design, and business partners around experiences customers feel and systems that hold up at scale.</span>
               </li>
               <li>
                 <span class="cd-title">Media Products Business Operations</span>
@@ -542,7 +543,7 @@
       <p class="kicker kicker-teal">Who I teach</p>
       <h2 id="who-h">If you've ever felt behind on this, you're exactly who I'm here for</h2>
 
-      <ul class="who-list">
+      <ul class="who-list swipe" tabindex="0" aria-label="Who I teach, scrollable sideways on a phone">
         <li class="who-teal">
           <span class="spot" aria-hidden="true">
             <svg viewBox="0 0 80 80" focusable="false">
@@ -680,7 +681,7 @@
       <p class="kicker kicker-navy">How I teach</p>
       <h2 id="principles-h">Four things I don't compromise on</h2>
 
-      <ol class="principles">
+      <ol class="principles swipe" tabindex="0" aria-label="Principles, scrollable sideways on a phone">
         <li class="pr-coral">
           <span class="p-num" aria-hidden="true">01</span>
           <h3>Ethics first</h3>
@@ -720,7 +721,7 @@
         and I'll shape it to fit.
       </p>
 
-      <div class="grid grid-3 offer-grid">
+      <div class="grid grid-3 offer-grid swipe" tabindex="0" aria-label="Three ways to work together, scrollable sideways on a phone">
         <article class="offer offer-coral">
           <span class="offer-art" aria-hidden="true">
             <svg viewBox="0 0 120 80" focusable="false">
@@ -830,49 +831,71 @@
 
   <!-- ============ CONTACT ============ -->
   <section class="section section-contact" id="contact" aria-labelledby="contact-h">
-    <div class="wrap contact-grid">
-      <div class="contact-copy">
-        <p class="kicker kicker-light">Get in touch</p>
-        <h2 id="contact-h">Help me make sure no one gets left behind</h2>
-        <p class="contact-lede">
-          Maybe it's a group you're responsible for: your students, your residents, your
-          members, your family. Maybe it's just you, and you're tired of being out of the loop.
-          Whoever it's&nbsp;for, I'd&nbsp;like&nbsp;to&nbsp;help.
+    <!-- ============ CONTACT FORM ============
+         The section is the form now — no lede, no email button, no envelope.
+         Four questions, laid out across the card rather than down it.
+         SETUP (one line): create a free form at formspree.io, then swap
+         YOUR_FORM_ID below for the id it gives you. Until you do, the form
+         still works — script.js notices the placeholder and hands the
+         answers to the visitor's mail app instead. Submitting with
+         JavaScript blocked posts straight to Formspree the old way. -->
+    <div class="wrap">
+      <form class="contact-form" id="contactForm" method="POST"
+            action="https://formspree.io/f/YOUR_FORM_ID">
+        <p class="kicker">Get in touch</p>
+        <h2 id="contact-h" class="form-head">Want to work together?</h2>
+        <p class="form-lede">
+          If you're looking for help getting comfortable with AI and new technologies
+          &mdash; a one-on-one session, a workshop for your organization, or a talk for
+          your event &mdash; tell me a little about it below and I'll write back.
         </p>
 
-        <div class="contact-actions">
-          <a class="btn btn-sage btn-big" href="mailto:coachlea.ai@gmail.com?subject=AI%20%26%20technical%20literacy%20inquiry">
-            coachlea.ai@gmail.com
-          </a>
-          <button type="button" class="copy-email" id="copyEmail" hidden>Copy address</button>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input type="text" id="f-name" name="name" required autocomplete="name"
+                   placeholder="First and last is plenty">
+          </div>
+
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" required autocomplete="email"
+                   placeholder="you@example.com">
+          </div>
+
+          <div class="field">
+            <label for="f-about">What are you reaching out about?</label>
+            <select id="f-about" name="about" required>
+              <option value="" disabled selected>Select one&hellip;</option>
+              <option>One-on-one or small group session</option>
+              <option>Workshop for my organization</option>
+              <option>Talk or panel</option>
+              <option>Not sure yet &mdash; help me figure it out</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="field field-msg">
+            <label for="f-message">Anything you want me to know</label>
+            <textarea id="f-message" name="message" rows="4" required
+                      placeholder="Who the group is, what they're struggling with, and any dates you have in mind."></textarea>
+          </div>
         </div>
-        <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
 
-        <p class="contact-help">
-          Helpful to include: who your group is, roughly how many people, and whether you want it
-          in person or virtual. Not sure yet? Write anyway.
-        </p>
+        <!-- Spam trap: real people never see this, bots fill it in. -->
+        <input type="text" name="_gotcha" class="form-trap" tabindex="-1"
+               autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="AI &amp; technical literacy inquiry (site form)">
 
-        <p class="contact-social">
-          You can also find me on
-          <a class="social-link" href="https://www.linkedin.com/in/lea-ademilola/"
-             target="_blank" rel="noopener"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>LinkedIn</a>
-        </p>
-      </div>
-
-      <div class="contact-art" aria-hidden="true">
-        <svg viewBox="0 0 200 170" focusable="false">
-          <circle cx="100" cy="90" r="76" class="il-navy-soft-fill"/>
-          <path d="M34 54 h132 a8 8 0 0 1 8 8 v70 a8 8 0 0 1 -8 8 h-132 a8 8 0 0 1 -8 -8 v-70 a8 8 0 0 1 8 -8 z" class="il-kraft"/>
-          <path d="M28 60 L100 112 L172 60" class="il-envelope-line"/>
-          <path d="M26 132 L74 92" class="il-envelope-line"/>
-          <path d="M174 132 L126 92" class="il-envelope-line"/>
-          <path d="M40 24 q2 9 11 11 q-9 2 -11 11 q-2 -9 -11 -11 q9 -2 11 -11 z" class="il-gold-solid float-a"/>
-          <path d="M164 20 q1.5 7 9 8.5 q-7.5 1.5 -9 9 q-1.5 -7.5 -9 -9 q7.5 -1.5 9 -8.5 z" class="il-sage float-b"/>
-          <circle cx="18" cy="100" r="6" class="il-coral-solid float-c"/>
-          <circle cx="184" cy="104" r="7" class="il-sage float-a"/>
-        </svg>
-      </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-sage btn-big form-submit">Send this to Lea</button>
+          <p class="form-note">
+            This goes to coachlea.ai@gmail.com. I read and answer every one myself,
+            usually within a few days. I won't share your details or add you to a list.
+          </p>
+        </div>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 

@@ -147,7 +147,7 @@
        fading in one paragraph at a time interrupts reading. */
     var targets = document.querySelectorAll(
       ".section .kicker, .section h2, .section-lede, .card, .who-list li, .offer, " +
-      ".principles li, .volunteer, .pull-quote, .bg-card"
+      ".principles li, .volunteer, .pull-quote, .bg-card, .contact-form"
     );
     Array.prototype.forEach.call(targets, function (el) { el.classList.add("reveal"); });
 
@@ -160,5 +160,79 @@
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
 
     Array.prototype.forEach.call(targets, function (el) { revealer.observe(el); });
+  }
+
+  /* ---------- Contact form ----------
+     Three ways this can go, in order of preference:
+       1. A real endpoint is set  -> post it in the background, stay on the page.
+       2. Endpoint still the placeholder -> hand the answers to the visitor's
+          mail app, so the form is never a dead end while setup is pending.
+       3. This file blocked or failing -> the browser posts the form normally.
+     Native validation is left switched on, so this only runs on valid input. */
+  var contactForm = document.getElementById("contactForm");
+  var formStatus = document.getElementById("formStatus");
+  var PLACEHOLDER = "YOUR_FORM_ID";
+
+  function say(message, isError) {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    if (isError) formStatus.setAttribute("data-state", "error");
+    else formStatus.removeAttribute("data-state");
+  }
+
+  /* Readable label for each answer, so the email doesn't arrive as field names. */
+  var FIELD_LABELS = {
+    name: "Name",
+    email: "Email",
+    about: "Reaching out about",
+    message: "Message"
+  };
+
+  function asPlainText(form) {
+    var lines = [];
+    Object.keys(FIELD_LABELS).forEach(function (key) {
+      var field = form.elements[key];
+      if (!field || !field.value) return;
+      lines.push(FIELD_LABELS[key] + ": " + field.value);
+    });
+    return lines.join("\n\n");
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      var action = contactForm.getAttribute("action") || "";
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+
+      // No endpoint yet: compose the message instead of pretending to send it.
+      if (action.indexOf(PLACEHOLDER) !== -1) {
+        e.preventDefault();
+        var subject = "AI & technical literacy inquiry";
+        window.location.href = "mailto:" + EMAIL +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(asPlainText(contactForm));
+        say("Opening your email app with this filled in — press send there.");
+        return;
+      }
+
+      if (!window.fetch || !window.FormData) return; // let the browser post it
+
+      e.preventDefault();
+      if (submitBtn) submitBtn.disabled = true;
+      say("Sending…");
+
+      window.fetch(action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" }
+      }).then(function (res) {
+        if (!res.ok) throw new Error(String(res.status));
+        contactForm.reset();
+        say("Thank you — this reached me. I'll write back within a few days.");
+      }).catch(function () {
+        say("That didn't go through. Please email " + EMAIL + " directly and I'll pick it up.", true);
+      }).then(function () {
+        if (submitBtn) submitBtn.disabled = false;
+      });
+    });
   }
 })();
